@@ -1,7 +1,7 @@
 # awesome-text-editor
 
 ## Description
-
+To build a text editor that runs in the browser. The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
 
 
 ## Table of Contents
@@ -67,29 +67,21 @@ To install the application, please follow the instructions below:
 4. Open the application in your browser
     ```sh
     http://localhost:3001/
-    ```
-5. To run the application in development mode
-    ```sh
-    npm run watch
-    ```
-6. To run the application in production mode
-    ```sh
-    npm run build
 
 
 ## Usage
 
-
-
+Open terminal install npm packages and run npm run start from the root directory to start cd client && build for the webpack mode production.
 
 ## License
-
+This project does not have a license.
 
 ## Struggles and Sources
+I struggled a bit with this project. I had a hard time getting the application to load with no consol errors. I had worked with a classmate that had used a plugin called polyfill. I tried to use that plug in but it caused errors with my workbox. I didn't realize that was an issue but after removing it the app works as it should
 
 
 ## Link to Recordings/Screenshot
-Here is a link to the Recording [here]("insert text").
+Here is a link to the deployed app [here]("https://awesome-text-editor-2023-3b17a5e16de1.herokuapp.com/").
 
 ## Questions
 If you have any questions, please contact me at the email below. Check out my Github portfolio for more of my projects!
