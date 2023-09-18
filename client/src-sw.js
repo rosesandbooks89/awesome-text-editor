@@ -37,6 +37,4 @@ new StaleWhileRevalidate({
   ],
 }));
 
-
-
 registerRoute();
