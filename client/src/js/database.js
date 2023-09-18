@@ -12,42 +12,49 @@ const initdb = async () =>
     },
   });
 
-//add logic to a method that accepts some content and adds it to the database
+
+//Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {
-  try {
-    const jateDb = await openDB('jate', 1);
+  console.log('Put synced to the DB');
+  // Create a connection to the database database and version we want to use.
+  const jateDb = await openDB('jate', 1);
 
-    const tx = jateDb.transaction('jate', 'readwrite');
+  // Create a new transaction and specify the database and data privileges.
+  const tx = jateDb.transaction('jate', 'readwrite');
 
-    const store = tx.objectStore('jate');
+  // Open up the desired object store.
+  const store = tx.objectStore('jate');
 
-    const request = store.put({ id: 1, value: content });
-    const result = await request;
-    console.log('Data saved to the database', result.value);
-  } catch (error) {
-    console.log(error);
-  }
+  // Use the .add() method on the store and pass in the content.
+  const request = store.add({ content: content });
+
+  // Get confirmation of the request.
+  const result = await request;
+
+  console.log('Content added to the database', result);
 };
+
+
+
 //Add logic for a method that gets all the content from the database
 export const getDb = async () => {
-  try {
-    const jateDb = await openDB('jate', 1);
+  console.log('Get synced to the DB');
+ // Create a connection to the database database and version we want to use.
+  const jateDb = await openDB('jate', 1);
 
-    const tx = jateDb.transaction('jate', 'readonly');
+  // Create a new transaction and specify the database and data privileges.
+  const tx = jateDb.transaction('jate', 'readonly');
 
-    const store = tx.objectStore('jate');
+  // Open up the desired object store.
+  const store = tx.objectStore('jate');
 
-    const request = store.get(1);
-    const result = await request;
-    result
-      ? console.log('Data retrieved from the database', result.value)
-      : console.log('Data not found in the database');
+  // Use the .getAll() method to get all data in the database.
+  const request = store.getAll();
 
-      return result?.value;
-  } catch (error) {
-    console.log('getDb not implemented');
-    console.log(error);
-  }
+  // Get confirmation of the request.
+  const result = await request;
+  console.log('result.value', result);
+  return result?.value;
 };
 
 initdb();
