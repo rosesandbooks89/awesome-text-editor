@@ -81,7 +81,7 @@ I struggled a bit with this project. I had a hard time getting the application t
 
 
 ## Link to Recordings/Screenshot
-Here is a link to the deployed app [here]("https://awesome-text-editor-2023-3b17a5e16de1.herokuapp.com/").
+Here is a link to the deployed app [here](https://awesome-text-editor-2023-3b17a5e16de1.herokuapp.com/).
 
 ## Questions
 If you have any questions, please contact me at the email below. Check out my Github portfolio for more of my projects!
